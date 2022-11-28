@@ -1,4 +1,4 @@
-package Logica;
+package logica;
 public class Main {
     public static void main(String[] arg) {
 		//objeto para testeo
