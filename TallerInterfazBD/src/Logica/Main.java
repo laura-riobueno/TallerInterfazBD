@@ -1,5 +1,5 @@
-package logica;
-import interfaz.Interfaz;
+package Logica;
+import Interfaz.Interfaz;
 
 public class Main {
     public static void main(String[] arg) {

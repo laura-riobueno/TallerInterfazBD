@@ -1,4 +1,4 @@
-package interfaz;
+package Interfaz;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
