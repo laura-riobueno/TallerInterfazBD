@@ -5,5 +5,5 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Interfaz extends JFrame implements ActionListener {
-    
+    b=15;
 }
