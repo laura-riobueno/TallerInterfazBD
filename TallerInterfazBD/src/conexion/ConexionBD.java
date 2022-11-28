@@ -8,7 +8,7 @@ public class ConexionBD {
     private static Connection connection = null;
     private static String jdbcURL = "jdbc:postgresql://localhost:5432/EnsambleModulo";
     private static String username = "postgres";
-    private static String password = "hydro";
+    private static String password = "lauwu";
 
     public static Connection getConnection() {
         try {
