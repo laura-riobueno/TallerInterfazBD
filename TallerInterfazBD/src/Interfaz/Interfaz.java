@@ -6,7 +6,7 @@ import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interfaz extends JFrame implements ActionListener {
+public class Interfaz extends JFrame{
 
     public Interfaz(){
         setTitle("Inicio de usuario");
