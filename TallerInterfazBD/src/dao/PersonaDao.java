@@ -21,7 +21,7 @@ public class PersonaDao {
 
     public void ingresarPersona(Persona objPersona){ //Método que inserta en BD las personas que se le envíen en forma de objeto
         //AQUI ASIGNA A UN STRING EL QUERY DE INSERCIÓN CON LOS DATOS EXTRAIDOS DEL OBJETO RECIBIDO DE CONTROL
-        String consulta = "insert into PERSONAS(CEDULA,NOMBRE,APELLIDO,CORREO,TELEFONO) values ("+ objPersona.getCedula() + "','" + 
+        String consulta = "insert into PERSONA(CEDULA,NOMBRE,APELLIDO,CORREO,TELEFONO) values ("+ objPersona.getCedula() + "','" + 
                 objPersona.getNombre() + "','" + objPersona.getApellido() + "','" + objPersona.getCorreo() + "','" + objPersona.getTelefono() + "','" + "')";
         try{
             con = (Connection) ConexionBD.getConnection();//SE LLAMA A LA CONEXIÓN
@@ -38,7 +38,7 @@ public class PersonaDao {
     }
 
     public void actualizarPersona(Persona objPersona){//Método para modificar registros de las personas
-        String consulta= "UPDATE PERSONAS SET NOMBRE='"+objPersona.getNombre()+"',APELLIDO='"+objPersona.getApellido()
+        String consulta= "UPDATE PERSONA SET NOMBRE='"+objPersona.getNombre()+"',APELLIDO='"+objPersona.getApellido()
         +"',CORREO='"+objPersona.getCorreo()+"',TELEFONO='"+objPersona.getTelefono()+"' WHERE CEDULA="+objPersona.getCedula(); //Establezco consulta BD
         try{
                 con = (Connection) ConexionBD.getConnection();//SE LLAMA A LA CONEXIÓN
@@ -56,7 +56,7 @@ public class PersonaDao {
     
     public ArrayList<Persona> listaPersona(){ //Método que obtiene, guarda y devuelve un arraylist con las personas en BD
         ArrayList<Persona> aPersonaTemp=new ArrayList<>();//Creo ArrayList temporal
-        String consulta = "SELECT * FROM ANIMALES";//Establezco consulta BD
+        String consulta = "SELECT * FROM PERSONA";//Establezco consulta BD
         try {
             con = ConexionBD.getConnection();//Obtengo la conexión
             st = con.createStatement();//SE ASIGNA AL OBJETO STATEMENT LA CONEXION A BD

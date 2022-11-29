@@ -6,16 +6,17 @@ import java.sql.SQLException;
 
 public class ConexionBD {
     private static Connection connection = null;
-    private static String jdbcURL = "jdbc:postgresql://localhost:5432/EnsambleModulo";
+    private static String jdbcURL = "jdbc:postgresql://localhost:5432/TallerInterfaz";
     private static String username = "postgres";
     private static String password = "lauwu";
 
     public static Connection getConnection() {
         try {
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("Connected to PostgreSQL server");
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("error in conecting to PostgreSQL server");
             e.printStackTrace();
         }
