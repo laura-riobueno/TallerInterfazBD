@@ -21,8 +21,8 @@ public class PersonaDao {
 
     public void ingresarPersona(Persona objPersona){ //Método que inserta en BD las personas que se le envíen en forma de objeto
         //AQUI ASIGNA A UN STRING EL QUERY DE INSERCIÓN CON LOS DATOS EXTRAIDOS DEL OBJETO RECIBIDO DE CONTROL
-        String consulta = "insert into PERSONA(CEDULA,NOMBRE,APELLIDO,CORREO,TELEFONO) values ("+ objPersona.getCedula() + "','" + 
-                objPersona.getNombre() + "','" + objPersona.getApellido() + "','" + objPersona.getCorreo() + "','" + objPersona.getTelefono() + "','" + "')";
+        String consulta = "insert into PERSONA(CEDULA,NOMBRE,APELLIDO,CORREO,TELEFONO) values ('"+ objPersona.getCedula() + "','" + 
+                objPersona.getNombre() + "','" + objPersona.getApellido() + "','" + objPersona.getCorreo() + "','" + objPersona.getTelefono() + "')";
         try{
             con = (Connection) ConexionBD.getConnection();//SE LLAMA A LA CONEXIÓN
             st = con.createStatement();//SE ASIGNA AL OBJETO STATEMENT LA CONEXION A BD
@@ -39,7 +39,7 @@ public class PersonaDao {
 
     public void actualizarPersona(Persona objPersona){//Método para modificar registros de las personas
         String consulta= "UPDATE PERSONA SET NOMBRE='"+objPersona.getNombre()+"',APELLIDO='"+objPersona.getApellido()
-        +"',CORREO='"+objPersona.getCorreo()+"',TELEFONO='"+objPersona.getTelefono()+"' WHERE CEDULA="+objPersona.getCedula(); //Establezco consulta BD
+        +"',CORREO='"+objPersona.getCorreo()+"',TELEFONO='"+objPersona.getTelefono()+"' WHERE CEDULA='"+objPersona.getCedula()+"'"; //Establezco consulta BD
         try{
                 con = (Connection) ConexionBD.getConnection();//SE LLAMA A LA CONEXIÓN
                 st = con.createStatement();//SE ASIGNA AL OBJETO STATEMENT LA CONEXION A BD

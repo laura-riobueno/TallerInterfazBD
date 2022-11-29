@@ -12,11 +12,10 @@ public class ConexionBD {
 
     public static Connection getConnection() {
         try {
-            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("Connected to PostgreSQL server");
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("error in conecting to PostgreSQL server");
             e.printStackTrace();
         }
