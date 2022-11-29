@@ -1,5 +1,5 @@
 
-package interfaz;
+package Interfaz;
 
 import javax.swing.JTextField;
 

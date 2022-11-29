@@ -1,7 +1,7 @@
-package logica;
+package Logica;
 
 import dao.PersonaDao;
-import interfaz.Interfaz;
+import Interfaz.Interfaz;
 import modelo.Persona;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

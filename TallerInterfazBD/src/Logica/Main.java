@@ -1,5 +1,5 @@
-package logica;
-import interfaz.Interfaz;
+package Logica;
+import Interfaz.Interfaz;
 import modelo.Persona;
 
 public class Main {
