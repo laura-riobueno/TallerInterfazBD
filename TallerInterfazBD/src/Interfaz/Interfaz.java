@@ -86,18 +86,12 @@ public class Interfaz extends JFrame implements ActionListener{
 
         }
     }
-    public class Inicio extends JFrame implements ActionListener{
     /**
      * @param args
      */
     public static void main(String[]args){
 
         Interfaz interfaz = new Interfaz();
-        interfaz.setBounds(0,0,500,500);
-        interfaz.setVisible(true);
-        interfaz.setLocationRelativeTo(null);
-
-        Interfaz Inicio = new Interfaz();
         interfaz.setBounds(0,0,500,500);
         interfaz.setVisible(true);
         interfaz.setLocationRelativeTo(null);
