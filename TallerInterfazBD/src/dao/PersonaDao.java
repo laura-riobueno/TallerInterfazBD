@@ -19,7 +19,7 @@ public class PersonaDao {
         rs = null;
     }
 
-    public void ingresarAnimales(Persona objPersona){ //Método que inserta en BD las personas que se le envíen en forma de objeto
+    public void ingresarPersona(Persona objPersona){ //Método que inserta en BD las personas que se le envíen en forma de objeto
         //AQUI ASIGNA A UN STRING EL QUERY DE INSERCIÓN CON LOS DATOS EXTRAIDOS DEL OBJETO RECIBIDO DE CONTROL
         String consulta = "insert into PERSONAS(CEDULA,NOMBRE,APELLIDO,CORREO,TELEFONO) values ("+ objPersona.getCedula() + "','" + 
                 objPersona.getNombre() + "','" + objPersona.getApellido() + "','" + objPersona.getCorreo() + "','" + objPersona.getTelefono() + "','" + "')";
@@ -37,7 +37,7 @@ public class PersonaDao {
         
     }
 
-    public void actualizarAnimal(Persona objPersona, int id){//Método para modificar registros de las personas
+    public void actualizarPersona(Persona objPersona){//Método para modificar registros de las personas
         String consulta= "UPDATE PERSONAS SET NOMBRE='"+objPersona.getNombre()+"',APELLIDO='"+objPersona.getApellido()
         +"',CORREO='"+objPersona.getCorreo()+"',TELEFONO='"+objPersona.getTelefono()+"' WHERE CEDULA="+objPersona.getCedula(); //Establezco consulta BD
         try{

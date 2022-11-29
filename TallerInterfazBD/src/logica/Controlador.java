@@ -20,16 +20,10 @@ public class Controlador implements ActionListener{
         this.persona = persona;
         this.interfaz = interfaz;
         //Listeners de los botónes
-        this.interfaz.btnAnterior.addActionListener(this);
-        this.interfaz.btnSiguiente.addActionListener(this);
-        this.interfaz.btnReproducir.addActionListener(this);
-        this.interfaz.btnDetener.addActionListener(this);
         this.interfaz.btnAgregar.addActionListener(this);
         this.interfaz.btnModificar.addActionListener(this);
-        this.interfaz.btnEliminar.addActionListener(this);
         this.interfaz.btnGuardarC.addActionListener(this);
         this.interfaz.btnSalir.addActionListener(this);
-        this.interfaz.btnCargarAnimal.addActionListener(this);
 
     }
 
@@ -40,13 +34,13 @@ public class Controlador implements ActionListener{
     }
 
     public void mostrarVista(){
-        Persona an=new Persona(); //Instancio objeto animal
-        an=aPersona .get(posArr); //Asigno al objeto el animal de la posición escogida
-        this.interfaz.txtCedula.setText(an.getCedula());
-        this.interfaz.txtNombre.setText(an.getNombre());
-        this.interfaz.txtApellido.setText(an.getApellido());
-        this.interfaz.txtCorreo.setText(an.getCorreo());
-        this.interfaz.txtTelefono.setText(an.getTelefono());
+        Persona per=new Persona(); //Instancio objeto animal
+        per=aPersona.get(posArr); //Asigno al objeto el animal de la posición escogida
+        this.interfaz.txtCedula.setText(per.getCedula());
+        this.interfaz.txtNombre.setText(per.getNombre());
+        this.interfaz.txtApellido.setText(per.getApellido());
+        this.interfaz.txtCorreo.setText(per.getCorreo());
+        this.interfaz.txtTelefono.setText(per.getTelefono());
         
     }
 
@@ -64,10 +58,36 @@ public class Controlador implements ActionListener{
             this.interfaz.txtApellido.setEditable(true);
             this.interfaz.txtCorreo.setEditable(true);
             this.interfaz.txtTelefono.setEditable(true);
-            this.interfaz.btnCargarAnimal.setVisible(true);//Muestro botón Adicionar animal 
-            this.interfaz.lbImg.setIcon(null);//Quito la imagen de la pantalla
-        
-        }else{}
+            
+        }
+        if(e.getSource()== this.interfaz.btnModificar){//PUlSACIÓN DEL BOTÓN MODIFICAR
+            this.interfaz.txtNombre.setEditable(true);//Seteo a editables las cajas de texto
+            this.interfaz.txtApellido.setEditable(true);
+            this.interfaz.txtCorreo.setEditable(true);
+            this.interfaz.txtTelefono.setEditable(true);
+        }
+    
+        if(e.getSource()== this.interfaz.btnGuardarC){//PUlSACIÓN DEL BOTÓN GUARDAR MODIFICACIONES
+            PersonaDao PerAct=new PersonaDao();//Crea objeto animales dao para llamar al método de modificar 
+            Persona personaAct=new Persona();//Creo objeto de animales para guardar info a modificar
+            personaAct.setCedula(this.interfaz.txtCedula.getText());//Seteo en objeto los datos a modificar desde los textbox
+            personaAct.setNombre(this.interfaz.txtNombre.getText());
+            personaAct.setApellido(this.interfaz.txtApellido.getText());
+            personaAct.setCorreo(this.interfaz.txtCorreo.getText());
+            personaAct.setTelefono(this.interfaz.txtTelefono.getText());
+            PerAct.actualizarPersona(personaAct);
+            actualizarVista();
+            this.interfaz.txtCedula.setEditable(false);//Seteo a editables las cajas de texto
+            this.interfaz.txtNombre.setEditable(false);
+            this.interfaz.txtApellido.setEditable(false);
+            this.interfaz.txtCorreo.setEditable(false);
+            this.interfaz.txtTelefono.setEditable(false);//Oculto botón guardar cambios
+            
+        }
+        if(e.getSource()== this.interfaz.btnSalir){
+            this.interfaz.setVisible(false);//Cierro el aplicativo ocultando la ventana y cerrando el proceso
+            this.interfaz.dispose();
+            System.exit(0);//Mato el proceso
+        }
     }
-
 }
