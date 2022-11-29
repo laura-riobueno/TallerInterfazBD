@@ -45,7 +45,6 @@ public class Controlador implements ActionListener{
         this.interfaz.txtApellido.setText(per.getApellido());
         this.interfaz.txtCorreo.setText(per.getCorreo());
         this.interfaz.txtTelefono.setText(per.getTelefono());
-        
     }
 
 
