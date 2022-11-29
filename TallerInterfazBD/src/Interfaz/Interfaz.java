@@ -2,20 +2,23 @@ package Interfaz;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.TitlePaneLayout;
-
+import javax.swing.text.AttributeSet.ColorAttribute;
+import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
 
 public class Interfaz extends JFrame implements ActionListener{
     private JLabel cedula,nombre,apellido,correo,telefono;
     private JTextField ced,nom,ape,cor,tel;
     private JButton Limpiar,Volver,Enviar;
 
+
     public Interfaz(){
+        
         setTitle("Inicio de usuario");
         setLayout(null);
-        //getContentPane().setBackground();
-
+        getContentPane().setBackground(new Color(237, 187, 153));
         cedula = new JLabel("Cedula");
         cedula.setBounds(50,20,200,35);
         add(cedula);
