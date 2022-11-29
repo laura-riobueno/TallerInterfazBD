@@ -14,6 +14,7 @@ public class Interfaz extends JFrame implements ActionListener{
     public Interfaz(){
         setTitle("Inicio de usuario");
         setLayout(null);
+        //getContentPane().setBackground();
 
         cedula = new JLabel("Cedula");
         cedula.setBounds(50,20,200,35);
